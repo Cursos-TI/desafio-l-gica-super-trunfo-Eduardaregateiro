@@ -3,13 +3,13 @@
 Bem-vindo ao desafio "Super Trunfo - Países"! 
 
 ### 🚩 Objetivos:
-    - Permitir o cadastro de informações detalhadas sobre cidades (população, área, PIB, etc.).
-    - Realizar cálculos adicionais, como densidade populacional, PIB per capita e um "superpoder" baseado em atributos combinados.
-    - Comparar cartas para determinar vencedores com base em atributos selecionados.
+   - Permitir o cadastro de informações detalhadas sobre cidades (população, área, PIB, etc.).
+   - Realizar cálculos adicionais, como densidade populacional, PIB per capita e um "superpoder" baseado em atributos combinados.
+   - Comparar cartas para determinar vencedores com base em atributos selecionados.
     
 ### Como usar:
-    - Compile o código em um compilador de C.
-    - Execute e insira os dados das cidades conforme solicitado.
+  - Compile o código em um compilador de C.
+  - Execute e insira os dados das cidades conforme solicitado.
 ### Funcionamento:
 
 1- ***Entrada de Dados:***
