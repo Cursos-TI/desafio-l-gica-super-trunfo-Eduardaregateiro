@@ -12,9 +12,12 @@ int main()
     char Estado01[2], Estado02[2], CodigodaCarta01[10], CodigodaCarta02[10], Nome_da_cidade01[15], Nome_da_cidade02[15];
     float Area_km01, Area_km02, PIB01, PIB02, Densidade_Populacional01, Densidade_Populacional02, PIB_per_Capita01, PIB_per_Capita02, SuperPoder01, SuperPoder02, Atributo01, Atributo02;
 
-    printf("____________________________________________________________\n\n");
+    // Definição de variável para armazenar a escolha do usuário do primeiro atributo
+    char Atributo01Char[50], Atributo02Char[50];
+
+    printf("\n\n");
     printf("            Desafio Super Trunfo - Países  \n");
-    printf("____________________________________________________________\n");
+    printf("\n");
 
     printf("\n");
 
@@ -87,7 +90,7 @@ int main()
     // Superpoder da carta 02
     SuperPoder02 = Populacao_Carta02 + Area_km02 + PIB02 + Numeros_Turisticos02 + (1 / Densidade_Populacional02) + PIB_per_Capita02;
 
-    printf("____________________________________________________________\n\n");
+    printf("\n\n");
 
     printf("\n");
 
@@ -135,7 +138,7 @@ int main()
 
     printf("\n");
 
-    printf("____________________________________________________________\n\n");
+    printf("\n\n");
 
     // Comparação de Cartas:
     // Exibição dos Resultados:
@@ -146,8 +149,7 @@ int main()
     printf("Selecione dois atributos distintos!\n");
     printf("------------------------------------\n");
 
-
-    //inicio do jogo
+    // inicio do jogo
     printf("*Escolha um número da lista para comparação do 1º Atributo: \n\n");
     printf(" 1. População\n");
     printf(" 2. Área km²\n");
@@ -168,6 +170,9 @@ int main()
         printf("Carta 02 - %s: %d\n", Nome_da_cidade02, Populacao_Carta02);
         printf("\n");
 
+        // Atributo 01 é definidos como População
+        strcpy(Atributo01Char, "População");
+
         // A soma dos atributos
         Atributo01 = Atributo01 + Populacao_Carta01;
         Atributo02 = Atributo02 + Populacao_Carta02;
@@ -181,6 +186,9 @@ int main()
         printf("Área (km²):\nCarta 01 - %s: %.2f\n", Nome_da_cidade01, Area_km01);
         printf("Carta 02 - %s: %.2f\n", Nome_da_cidade02, Area_km02);
         printf("\n");
+
+        // Atributo 01 é definidos como Área
+        strcpy(Atributo01Char, "Área");
 
         // A soma dos atributos
         Atributo01 = Atributo01 + Area_km01;
@@ -196,6 +204,9 @@ int main()
         printf("Carta 02 - %s: %.2f\n", Nome_da_cidade02, PIB02);
         printf("\n");
 
+        // Atributo 01 é definidos como PIB
+        strcpy(Atributo01Char, "PIB");
+
         // A soma dos atributos
         Atributo01 = Atributo01 + PIB01;
         Atributo02 = Atributo02 + PIB02;
@@ -210,6 +221,8 @@ int main()
         printf("Carta 02 - %s: %d\n", Nome_da_cidade02, Numeros_Turisticos02);
         printf("\n");
 
+        // Atributo 01 é definidos como Número de Pontos Turisticos
+        strcpy(Atributo01Char, "Pontos Turisticos");
 
         // A soma dos atributos
         Atributo01 = Atributo01 + Numeros_Turisticos01;
@@ -225,6 +238,9 @@ int main()
         printf("Carta 02 - %s: %.2f\n", Nome_da_cidade02, Densidade_Populacional02);
         printf("\n");
 
+        // Atributo 01 é definidos como Densidade Populacional
+        strcpy(Atributo01Char, "Densidade Populacional");
+
         // A soma dos atributos
         Atributo01 = Atributo01 + Densidade_Populacional01;
         Atributo02 = Atributo02 + Densidade_Populacional02;
@@ -239,6 +255,8 @@ int main()
         printf("Carta 02 - %s: %.2f\n", Nome_da_cidade02, PIB_per_Capita02);
         printf("\n");
 
+        // Atributo 01 é definidos como PIB per Capita
+        strcpy(Atributo01Char, "PIB per Capita");
 
         // A soma dos atributos
         Atributo01 = Atributo01 + PIB_per_Capita01;
@@ -254,7 +272,8 @@ int main()
         printf("Carta 02 - %s: %.2f\n", Nome_da_cidade02, SuperPoder02);
         printf("\n");
 
-
+        // Atributo 01 é definidos como Super Poder
+        strcpy(Atributo01Char, "Super Poder");
 
         // A soma dos atributos
         Atributo01 = Atributo01 + SuperPoder01;
@@ -273,17 +292,87 @@ int main()
     printf("\n");
 
     printf("*Escolha um número da lista para comparação do 2º Atributo: \n\n");
-    // menu para escolha de qual atributo da carta 02 será feita a comparação
-    printf(" 1. População\n");
-    printf(" 2. Área km²\n");
-    printf(" 3. PIB\n");
-    printf(" 4. Número de Pontos Turisticos\n");
-    printf(" 5. Densidade Populacional\n");
-    printf(" 6. PIB per Capita\n");
-    printf(" 7. Super Poder\n\n");
+
+    switch (Guia)
+    {
+    case 1:
+        printf(" 2. Área km²\n");
+        printf(" 3. PIB\n");
+        printf(" 4. Número de Pontos Turisticos\n");
+        printf(" 5. Densidade Populacional\n");
+        printf(" 6. PIB per Capita\n");
+        printf(" 7. Super Poder\n");
+        break;
+
+    case 2:
+        printf(" 1. População\n");
+        printf(" 3. PIB\n");
+        printf(" 4. Número de Pontos Turisticos\n");
+        printf(" 5. Densidade Populacional\n");
+        printf(" 6. PIB per Capita\n");
+        printf(" 7. Super Poder\n");
+        break;
+
+    case 3:
+        printf(" 1. População\n");
+        printf(" 2. Área km²\n");
+        printf(" 4. Número de Pontos Turisticos\n");
+        printf(" 5. Densidade Populacional\n");
+        printf(" 6. PIB per Capita\n");
+        printf(" 7. Super Poder\n");
+        break;
+
+    case 4:
+        printf(" 1. População\n");
+        printf(" 2. Área km²\n");
+        printf(" 3. PIB\n");
+        printf(" 5. Densidade Populacional\n");
+        printf(" 6. PIB per Capita\n");
+        printf(" 7. Super Poder\n");
+        break;
+
+    case 5:
+        printf(" 1. População\n");
+        printf(" 2. Área km²\n");
+        printf(" 3. PIB\n");
+        printf(" 4. Número de Pontos Turisticos\n");
+        printf(" 6. PIB per Capita\n");
+        printf(" 7. Super Poder\n");
+        break;
+
+    case 6:
+        printf(" 1. População\n");
+        printf(" 2. Área km²\n");
+        printf(" 3. PIB\n");
+        printf(" 4. Número de Pontos Turisticos\n");
+        printf(" 5. Densidade Populacional\n");
+        printf(" 7. Super Poder\n");
+        break;
+
+    case 7:
+        printf(" 1. População\n");
+        printf(" 2. Área km²\n");
+        printf(" 3. PIB\n");
+        printf(" 4. Número de Pontos Turisticos\n");
+        printf(" 5. Densidade Populacional\n");
+        printf(" 6. PIB per Capita\n");
+        break;
+
+    default:
+        printf(" 1. População\n");
+        printf(" 2. Área km²\n");
+        printf(" 3. PIB\n");
+        printf(" 4. Número de Pontos Turisticos\n");
+        printf(" 5. Densidade Populacional\n");
+        printf(" 6. PIB per Capita\n");
+        printf(" 7. Super Poder\n");
+        break;
+    }
+
     scanf("%d", &Guia02);
     printf("\n");
 
+    // Verifica  se foi escolhido o mesmo atributo, se sim, informa ao usuário que deve escolher atributos diferentes.
     if (Guia == Guia02)
     {
         printf("Você escolheu o mesmo atributo, escolha Atributos Diferentes!");
@@ -297,6 +386,8 @@ int main()
             printf("Carta 02 - %s: %d\n", Nome_da_cidade02, Populacao_Carta02);
             printf("\n");
 
+            // Atributo 02 é definidos como Super Poder
+            strcpy(Atributo02Char, "População");
 
             // A soma dos atributos
             Atributo01 = Atributo01 + Populacao_Carta01;
@@ -312,6 +403,8 @@ int main()
             printf("Carta 02 - %s: %.2f\n", Nome_da_cidade02, Area_km02);
             printf("\n");
 
+            // Atributo 02 é definidos como Área
+            strcpy(Atributo02Char, "Área");
 
             // A soma dos atributos
             Atributo01 = Atributo01 + Area_km01;
@@ -327,6 +420,8 @@ int main()
             printf("Carta 02 - %s: %.2f\n", Nome_da_cidade02, PIB02);
             printf("\n");
 
+            // Atributo 02 é definidos como PIB
+            strcpy(Atributo02Char, "PIB");
 
             // A soma dos atributos
             Atributo01 = Atributo01 + PIB01;
@@ -342,6 +437,8 @@ int main()
             printf("Carta 02 - %s: %d\n", Nome_da_cidade02, Numeros_Turisticos02);
             printf("\n");
 
+            // Atributo 02 é definidos como Número de Pontos Turisticos
+            strcpy(Atributo02Char, "Pontos Turisticos");
 
             // A soma dos atributos
             Atributo01 = Atributo01 + Numeros_Turisticos01;
@@ -357,6 +454,8 @@ int main()
             printf("Carta 02 - %s: %.2f\n", Nome_da_cidade02, Densidade_Populacional02);
             printf("\n");
 
+            // Atributo 02 é definidos como Densidade Populacional
+            strcpy(Atributo02Char, "Densidade Populacional");
 
             // A soma dos atributos
             Atributo01 = Atributo01 + Densidade_Populacional01;
@@ -372,6 +471,8 @@ int main()
             printf("Carta 02 - %s: %.2f\n", Nome_da_cidade02, PIB_per_Capita02);
             printf("\n");
 
+            // Atributo 02 é definidos como PIB per Capita
+            strcpy(Atributo02Char, "PIB per Capita");
 
             // A soma dos atributos
             Atributo01 = Atributo01 + PIB_per_Capita01;
@@ -387,6 +488,8 @@ int main()
             printf("Carta 02 - %s: %.2f\n", Nome_da_cidade02, SuperPoder02);
             printf("\n");
 
+            // Atributo 02 é definidos como Super Poder
+            strcpy(Atributo02Char, "Super Poder");
 
             // A soma dos atributos
             Atributo01 = Atributo01 + SuperPoder01;
@@ -412,7 +515,9 @@ int main()
         printf("\n");
 
         // Exibição do vencedor
-        printf("Atributo 1 = %.2f \nAtributo 2 = %.2f \n", Atributo01, Atributo02);
+        printf("Carta 01: Atributo 01: (%s) + Atributo 02: (%s) = %.2f\n", Atributo01Char, Atributo02Char, Atributo01);
+        printf("Carta 02: Atributo 01: (%s) + Atributo 02: (%s) = %.2f\n", Atributo01Char, Atributo02Char, Atributo02);
+        
 
         printf("\n");
 
@@ -421,7 +526,7 @@ int main()
 
         printf("\n");
 
-        printf("____________________________________________________________\n\n");
+        printf("\n\n");
 
         printf("\n");
 
